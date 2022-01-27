@@ -3,11 +3,11 @@
   <div>
     <ul>
       <li *ngFor="let user of users">
-        <div>
+        <a [routerLink]="['/users', user.id]">
           <img [src]="user.avatar" alt="" />
           <p>name: {{ user.first_name }} {{ user.last_name }}</p>
           <p>email: {{ user.email }}</p>
-        </div>
+        </a>
       </li>
     </ul>
   </div>
