@@ -18,4 +18,17 @@ export class UsersService {
         console.log("ERRROR::>>", error);
       });
   }
+
+  getUser(id: number) {
+    return this.http
+      .get(`https://reqres.in/api/users/${id}`)
+      .toPromise()
+      .then((response) => {
+        const { data } = response.json() as { data: User };
+        return data;
+      })
+      .catch((error) => {
+        console.log("ERRROR::>>", error);
+      });
+  }
 }
