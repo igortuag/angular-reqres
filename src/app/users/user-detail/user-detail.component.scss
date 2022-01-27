@@ -1,0 +1,21 @@
+.user-detail {
+  margin-top: 2rem;
+  display: flex;
+  gap: 1.25rem;
+
+  &__image {
+    object-fit: cover;
+  }
+
+  &__name {
+    font-size: 1.25rem;
+    font-weight: 700;
+    margin-bottom: 0.5rem;
+    color: #333;
+  }
+
+  &__email {
+    font-size: 0.875rem;
+    color: #666;
+  }
+}
