@@ -8,11 +8,12 @@ import { LoginComponent } from "./login/login.component";
 import { UsersComponent } from "./users/users.component";
 import { HomeComponent } from "./home/home.component";
 import { routing } from "./app.routing";
+import { AuthService } from "./login/auth.service";
 
 @NgModule({
   declarations: [AppComponent, LoginComponent, UsersComponent, HomeComponent],
   imports: [BrowserModule, FormsModule, HttpModule, routing],
-  providers: [],
+  providers: [AuthService],
   bootstrap: [AppComponent],
 })
 export class AppModule {}
