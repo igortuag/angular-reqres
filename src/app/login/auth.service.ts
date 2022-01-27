@@ -24,4 +24,11 @@ export class AuthService {
         window.alert(`Login fail ${errorData.error}`);
       });
   }
+
+  isLogged() {
+    if (localStorage.getItem("token")) {
+      return true;
+    }
+    return false;
+  }
 }
