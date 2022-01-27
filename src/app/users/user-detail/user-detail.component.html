@@ -1,0 +1,6 @@
+<p *ngIf="!user?.id">Loading...</p>
+<div *ngIf="user?.id">
+  <img [src]="user.avatar" alt="Photo of the user!" />
+  <p>Name: {{ user.first_name }} {{ user.last_name }}</p>
+  <p>Email: {{ user.email }}</p>
+</div>

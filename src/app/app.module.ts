@@ -7,12 +7,20 @@ import { AppComponent } from "./app.component";
 import { LoginComponent } from "./login/login.component";
 import { UsersComponent } from "./users/users.component";
 import { HomeComponent } from "./home/home.component";
-import { routing } from "./app.routing";
+import { AppRoutingModule } from "./app.routing";
 import { AuthService } from "./login/auth.service";
+import { UsersService } from "./users/users.service";
+import { UsersModule } from "./users/users.module";
 
 @NgModule({
-  declarations: [AppComponent, LoginComponent, UsersComponent, HomeComponent],
-  imports: [BrowserModule, FormsModule, HttpModule, routing],
+  declarations: [AppComponent, LoginComponent, HomeComponent],
+  imports: [
+    BrowserModule,
+    FormsModule,
+    HttpModule,
+    UsersModule,
+    AppRoutingModule,
+  ],
   providers: [AuthService],
   bootstrap: [AppComponent],
 })
