@@ -1,12 +1,14 @@
 <section class="container">
-  <h1>List of Users</h1>
   <div>
-    <ul>
-      <li *ngFor="let user of users">
+    <h1 class="user-list__title">List of Users</h1>
+    <ul class="user-list">
+      <li class="user-card" *ngFor="let user of users">
         <a [routerLink]="['/users', user.id]">
-          <img [src]="user.avatar" alt="" />
-          <p>name: {{ user.first_name }} {{ user.last_name }}</p>
-          <p>email: {{ user.email }}</p>
+          <img class="user-card__image" [src]="user.avatar" alt="" />
+          <p class="user-card__name">
+            {{ user.first_name }} {{ user.last_name }}
+          </p>
+          <p class="user-card__email">{{ user.email }}</p>
         </a>
       </li>
     </ul>
