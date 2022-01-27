@@ -7,7 +7,6 @@ import { UsersComponent } from "./users/users.component";
 const appRoutes = [
   { path: "", component: HomeComponent },
   { path: "login", component: LoginComponent },
-  { path: "users", component: UsersComponent },
 ];
 
 export const AppRoutingModule: ModuleWithProviders =
