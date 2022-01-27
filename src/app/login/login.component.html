@@ -1,9 +1,10 @@
 <section>
-  <h1>Made your login here</h1>
-  <form (ngSubmit)="login()">
-    <div>
-      <label for="email">Email:</label>
+  <h1 class="title">Made your login here</h1>
+  <form (ngSubmit)="login()" class="form-login">
+    <div class="form-login__group">
+      <label for="email" class="form-login__label">Email:</label>
       <input
+        class="form-login__input"
         type="email"
         id="email"
         name="email"
@@ -11,16 +12,17 @@
         required
       />
     </div>
-    <div>
-      <label for="password">Password:</label>
+    <div class="form-login__group">
+      <label for="password" class="form-login__label">Password:</label>
       <input
         type="password"
         id="password"
         name="password"
+        class="form-login__input"
         [(ngModel)]="formLogin.password"
         required
       />
     </div>
-    <button type="submit">LOGIN</button>
+    <button type="submit" class="form-login__button">LOGIN</button>
   </form>
 </section>
