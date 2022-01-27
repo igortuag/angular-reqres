@@ -1,3 +1,14 @@
-<p>
-  users works!
-</p>
+<section>
+  <h1>List of Users</h1>
+  <div>
+    <ul>
+      <li *ngFor="let user of users">
+        <div>
+          <img [src]="user.avatar" alt="" />
+          <p>name: {{ user.first_name }} {{ user.last_name }}</p>
+          <p>email: {{ user.email }}</p>
+        </div>
+      </li>
+    </ul>
+  </div>
+</section>
