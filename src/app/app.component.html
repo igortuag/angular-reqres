@@ -1,1 +1,28 @@
+<nav class="nav-bar">
+  <div class="container nav-bar__wrapper">
+    <ul class="nav-bar__list">
+      <li
+        key="item.name"
+        class="nav-bar__item"
+        *ngFor="let item of navList"
+        routerLinkActive="nav-bar__item--active"
+      >
+        <a
+          class="nav-bar__link"
+          routerLinkActive="nav-bar__link--active"
+          [routerLink]="item.path"
+          >{{ item.name }}</a
+        >
+      </li>
+      <li
+        class="nav-bar__item"
+        *ngFor="let item of navList"
+        routerLinkActive="nav-bar__item--active"
+      ></li>
+    </ul>
+    <button *ngIf="isLogged" class="nav-bar__button" (click)="logout()">
+      Logout
+    </button>
+  </div>
+</nav>
 <router-outlet></router-outlet>

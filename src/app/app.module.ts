@@ -5,11 +5,9 @@ import { HttpModule } from "@angular/http";
 
 import { AppComponent } from "./app.component";
 import { LoginComponent } from "./login/login.component";
-import { UsersComponent } from "./users/users.component";
 import { HomeComponent } from "./home/home.component";
 import { AppRoutingModule } from "./app.routing";
 import { AuthService } from "./login/auth.service";
-import { UsersService } from "./users/users.service";
 import { UsersModule } from "./users/users.module";
 import { AuthGuard } from "./guard/auth.guard";
 import { RegisterComponent } from "./register/register.component";
