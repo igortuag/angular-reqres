@@ -1,16 +1,15 @@
-import { Component } from "@angular/core";
+import { Component, OnInit } from "@angular/core";
+import { AuthService } from "./login/auth.service";
 
 @Component({
   selector: "app-root",
   templateUrl: "./app.component.html",
   styleUrls: ["./app.component.scss"],
 })
-export class AppComponent {
+export class AppComponent implements OnInit {
+  isLogged: boolean = false;
+
   navList = [
-    {
-      name: "Home",
-      path: "/",
-    },
     {
       name: "Login",
       path: "/login",
@@ -19,9 +18,22 @@ export class AppComponent {
       name: "Register",
       path: "/register",
     },
+  ];
+
+  navListLogged = [
     {
       name: "Users",
       path: "/users",
     },
   ];
+
+  constructor(private authService: AuthService) {}
+
+  ngOnInit() {
+    this.isLogged = this.authService.isLogged();
+
+    if (this.isLogged) {
+      this.navList = this.navListLogged;
+    }
+  }
 }
