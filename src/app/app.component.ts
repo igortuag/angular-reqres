@@ -1,4 +1,5 @@
-import { Component, OnInit } from "@angular/core";
+import { Component, OnDestroy, OnInit } from "@angular/core";
+import { Subscription } from "rxjs";
 import { AuthService } from "./login/auth.service";
 
 @Component({
@@ -6,7 +7,8 @@ import { AuthService } from "./login/auth.service";
   templateUrl: "./app.component.html",
   styleUrls: ["./app.component.scss"],
 })
-export class AppComponent implements OnInit {
+export class AppComponent implements OnInit, OnDestroy {
+  subscription: Subscription;
   isLogged: boolean = false;
 
   navListNonLogged = [
@@ -31,19 +33,31 @@ export class AppComponent implements OnInit {
 
   constructor(private authService: AuthService) {}
 
-  ngOnInit() {
-    this.isLogged = this.authService.isLogged();
-
-    if (this.isLogged) {
+  changeMenuLinks(isLogged: boolean) {
+    if (isLogged) {
       this.navList = this.navListLogged;
     } else {
       this.navList = this.navListNonLogged;
     }
   }
 
+  ngOnInit() {
+    this.subscription = this.authService.changeSessionEmitter.subscribe(
+      (isLogged) => {
+        this.isLogged = isLogged;
+        this.changeMenuLinks(isLogged);
+      }
+    );
+
+    this.isLogged = this.authService.isLogged();
+    this.changeMenuLinks(this.authService.isLogged());
+  }
+
   logout() {
     this.authService.logout();
-    this.isLogged = false;
-    this.navList = this.navListNonLogged;
+  }
+
+  ngOnDestroy() {
+    this.subscription.unsubscribe();
   }
 }
