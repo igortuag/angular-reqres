@@ -4,6 +4,12 @@
   margin: 0;
   padding: 0;
 
+  &__wrapper {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+  }
+
   &__list {
     height: 60px;
     list-style: none;
@@ -37,5 +43,18 @@
     &--active {
       color: #0070f3;
     }
+  }
+
+  &__button {
+    padding: 0.5rem;
+    text-decoration: none;
+    transition: color 0.2s ease-in-out;
+    cursor: pointer;
+    background-color: #0070f3;
+    color: #fff;
+    border-radius: 8px;
+    border: none;
+    font-weight: 500;
+    text-transform: uppercase;
   }
 }

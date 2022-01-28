@@ -9,7 +9,7 @@ import { AuthService } from "./login/auth.service";
 export class AppComponent implements OnInit {
   isLogged: boolean = false;
 
-  navList = [
+  navListNonLogged = [
     {
       name: "Login",
       path: "/login",
@@ -27,6 +27,8 @@ export class AppComponent implements OnInit {
     },
   ];
 
+  navList = [];
+
   constructor(private authService: AuthService) {}
 
   ngOnInit() {
@@ -34,6 +36,14 @@ export class AppComponent implements OnInit {
 
     if (this.isLogged) {
       this.navList = this.navListLogged;
+    } else {
+      this.navList = this.navListNonLogged;
     }
+  }
+
+  logout() {
+    this.authService.logout();
+    this.isLogged = false;
+    this.navList = this.navListNonLogged;
   }
 }
