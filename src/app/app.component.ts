@@ -6,5 +6,22 @@ import { Component } from "@angular/core";
   styleUrls: ["./app.component.scss"],
 })
 export class AppComponent {
-  title = "app works!";
+  navList = [
+    {
+      name: "Home",
+      path: "/",
+    },
+    {
+      name: "Login",
+      path: "/login",
+    },
+    {
+      name: "Register",
+      path: "/register",
+    },
+    {
+      name: "Users",
+      path: "/users",
+    },
+  ];
 }
