@@ -13,7 +13,7 @@ import { UsersService } from "./users/users.service";
 import { UsersModule } from "./users/users.module";
 import { AuthGuard } from "./guard/auth.guard";
 import { RegisterComponent } from "./register/register.component";
-import { RegisterService } from "./register.service";
+import { RegisterService } from "./register/register.service";
 
 @NgModule({
   declarations: [

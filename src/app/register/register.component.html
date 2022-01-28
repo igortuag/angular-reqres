@@ -1,9 +1,15 @@
 <div class="container">
   <div class="title">Register</div>
-  <form (ngSubmit)="submit()" class="form-login">
+  <form (ngSubmit)="register()" class="form-login">
     <div class="form-login__group">
       <label for="email" class="form-login__label"> Email </label>
-      <input type="email" name="email" id="email" class="form-login__input" />
+      <input
+        type="email"
+        name="email"
+        id="email"
+        class="form-login__input"
+        [(ngModel)]="formRegister.email"
+      />
     </div>
     <div class="form-login__group">
       <label for="password" class="form-login__label"> Password </label>
@@ -12,7 +18,9 @@
         name="password"
         id="password"
         class="form-login__input"
+        [(ngModel)]="formRegister.password"
       />
     </div>
+    <button class="form-login__button" type="submit">Register</button>
   </form>
 </div>
