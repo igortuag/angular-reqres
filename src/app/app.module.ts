@@ -7,15 +7,21 @@ import { AppComponent } from "./app.component";
 import { LoginComponent } from "./login/login.component";
 import { UsersComponent } from "./users/users.component";
 import { HomeComponent } from "./home/home.component";
-import { AppRoutingModule } from "./app.routing";
+import { AppRoutingModule } from "./register/app.routing";
 import { AuthService } from "./login/auth.service";
 import { UsersService } from "./users/users.service";
 import { UsersModule } from "./users/users.module";
 import { AuthGuard } from "./guard/auth.guard";
-import { RegisterComponent } from './register/register.component';
+import { RegisterComponent } from "./register/register.component";
+import { RegisterService } from "./register.service";
 
 @NgModule({
-  declarations: [AppComponent, LoginComponent, HomeComponent, RegisterComponent],
+  declarations: [
+    AppComponent,
+    LoginComponent,
+    HomeComponent,
+    RegisterComponent,
+  ],
   imports: [
     BrowserModule,
     FormsModule,
@@ -23,7 +29,7 @@ import { RegisterComponent } from './register/register.component';
     UsersModule,
     AppRoutingModule,
   ],
-  providers: [AuthService, AuthGuard],
+  providers: [AuthService, AuthGuard, RegisterService],
   bootstrap: [AppComponent],
 })
 export class AppModule {}
