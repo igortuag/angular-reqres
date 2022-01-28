@@ -1,0 +1,35 @@
+.nav-bar {
+  background-color: #f5f5f5;
+  border-bottom: 1px solid #e5e5e5;
+  margin: 0;
+  padding: 0;
+
+  &__list {
+    height: 60px;
+    list-style: none;
+    display: flex;
+    align-items: center;
+    margin: 0;
+  }
+
+  &__item {
+    display: flex;
+    align-items: center;
+    height: 100%;
+    padding: 0 1.25rem;
+    font-size: 1.25rem;
+    font-weight: 500;
+    color: #333;
+    text-decoration: none;
+    transition: color 0.2s ease-in-out;
+    margin: 0;
+
+    &:hover {
+      color: #0070f3;
+    }
+
+    &--active {
+      color: #0070f3;
+    }
+  }
+}
